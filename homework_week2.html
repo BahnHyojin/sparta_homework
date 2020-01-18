@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <!-- Webpage Title -->
+  <title>Homework week1</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->		
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+
+  <!-- me -->
+  <style>
+    *{
+      font-family: 'Nanum Myeongjo', serif;
+    }
+
+    .wrap {
+      width: 400px;
+      margin: 50px auto 50px auto;
+      
+    }
+
+    .image {
+      margin: 50px auto 20px auto;
+      background-size: cover;
+      background-position: center;
+    }
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    
+  </style>
+
+  <script>
+
+
+    function order(){ 
+      var name = $('#input-name').val();
+      var quantity = $('#input-quantity').val();
+      var adress = $('#input-adress').val();
+      var phonenumber = $('#input-phonenumber').val();
+      var regExp = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+
+      if (name ==''){
+        alert('이름을 입력하세요!')
+        $('#input-name').focus();
+      }else if (quantity ==''){
+        alert('수량을 입력하세요!')
+        $('#input-quantity').focus();
+      }else if (adress ==''){
+        alert('주소를 입력하세요!')
+        $('#input-adress').focus();
+      }else if (phonenumber ==''){
+        alert('번호를 입력하세요!')
+        $('#input-phonenumber').focus();
+       // else if ( !regExp.test( $('input-phonenumber').val() ) ) {
+       //  alert("잘못된 휴대폰 번호입니다. 숫자, - 를 포함한 숫자만 입력하세요.");
+       // return false
+     }else {
+      alert('주문완료!')
+    }
+  }
+
+
+
+
+</script>
+
+
+
+</head>
+
+
+<body>
+  <div class="wrap">
+    <div class="image">
+      <img src="flower.jpeg" width="400" height="350">
+    </div>
+    <h3>수국&장미 꽃다발</h3>
+    <h6>가격:23,600원</h6> 
+
+    <p>
+      오랫동안 관상이 가능한 장점을 가진 비누꽃 장미와 화사한 피치 색상의 허니 아지 사이 수국 조화를 매치한
+      모던한 느낌의 꽃다발입니다. 부모님에게 감사의 마음을 전할 때 용돈 꽃다발로도 사용할 수 있는 아이템으로 
+      꽃다발은 사용하신 후 화병에 넣어 새로운 인테리어 아이템으로 다양하게 연출할 수도 있으며, 무심히 벽에
+      기대어 놓아도 은은하고 화사한 무드를 만들어줍니다.
+    </p>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" >주문자 이름</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="input-name">
+    </div>
+    <div class="input-group mb-3" > 
+      <div class="input-group-prepend">
+        <span class="input-group-text" >수량</span>
+      </div>
+      <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="input-quantity">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" >주소</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="input-adress">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" input type="phone">전화번호</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="input-phonenumber">
+    </div>
+    <div class="button">
+      <button type="button" class="btn btn-secondary" onclick="order()">주문하기</button>
+    </div>
+  </div>
+</body>
+</html>
